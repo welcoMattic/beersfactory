@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        Beer:
+            class: App\Entity\Beer
+            list:
+                dql_filter: "entity.isOrganic = false"
+                fields: &beerListFields
+                    - { property: 'labelThumbnail', type: 'image' }
+                    - { property: 'name' }
+                    - { property: 'category' }
+                    - { property: 'ibu', template: 'easy_admin/Beer/fields/ibu.html.twig' }
+                    - { property: 'isOnline', type: 'toggle' }
+        OrganicBeer:
+            class: App\Entity\Beer
+            list:
+                dql_filter: "entity.isOrganic = true"
+                fields:
+                    <<: *beerListFields
+                    <<: { property: 'abv' } # alcohol by volume

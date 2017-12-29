@@ -1,0 +1,15 @@
+easy_admin:
+    design:
+        menu:
+            - label: Dashboard
+              icon: dashboard
+              route: admin_dashboard
+              default: true
+            - label: 'Manager'
+            - label: 'Beers'
+              icon: 'beer'
+              children:
+                  - { entity: 'Beer', icon: 'thermometer-2', label: 'Classic beers'}
+                  - { entity: 'OrganicBeer', icon: 'leaf', label: 'Organic beers'}
+            - { entity: 'Category', icon: 'th-list', label: 'Categories' }
+            - label: 'Env: %env(APP_ENV)%'
