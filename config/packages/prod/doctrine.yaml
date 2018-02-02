@@ -1,4 +1,6 @@
 doctrine:
+    dbal:
+        url: '%env(resolve:MYSQL_ADDON_URI)%'
     orm:
         metadata_cache_driver:
             type: service
