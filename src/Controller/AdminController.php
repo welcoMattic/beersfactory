@@ -9,7 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminContr
 class AdminController extends BaseAdminController
 {
     /**
-     * @Route("/dashboard", name="admin_dashboard")w
+     * @Route("/dashboard", name="admin_dashboard")
      */
     public function dashboard()
     {

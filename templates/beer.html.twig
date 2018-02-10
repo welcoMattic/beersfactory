@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12">
+                <a href="{{ path('home') }}" class="btn btn-sm btn-outline-secondary">
+                    ⬅️  {{ 'global.back_to_list_button'|trans }}
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <aside class="col-md-4">
+                <img class="img-thumbnail p-4" src="{{ beer.labelThumbnail }}" alt="{{ beer.name }}">
+            </aside>
+            <section class="col-md-8">
+                <h2 class="display-4">{{ beer.name }}</h2>
+                <p>
+                    {{ beer.description }}
+                </p>
+                <div class="container">
+                    <div class="row">
+                        {% if beer.ibu > 0 %}
+                            <div class="col-md-6">
+                                <div class="progress-group mb-4">
+                                    <span class="progress-text">
+                                        <abbr title="{{ 'beer.ibu_abbreviation'|trans }}">
+                                            IBU
+                                        </abbr>
+                                    </span>
+                                    <span class="progress-number"><b>{{ beer.ibu }}</b>/120</span>
+
+                                    <div class="progress sm">
+                                        <div class="progress-bar progress-bar-aqua" style="width: {{ (100 * beer.ibu / 120) }}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="col-md-6 d-flex justify-content-end align-items-center">
+                            <span class="badge badge-secondary">{{ beer.category }}</span>&nbsp;
+                            <span class="badge badge-dark">
+                                <abbr title="{{ 'beer.abv_abbreviation'|trans }}">
+                                    ABV
+                                </abbr> <strong>{{ beer.abv }}</strong>
+                            </span>&nbsp;
+                            {% if beer.isOrganic %}
+                                <span class="badge badge-success">
+                                    {{ 'beer.organic_beer'|trans }}
+                                </span>
+                            {% else %}
+                                <span class="badge badge-info">
+                                    {{ 'beer.classic_beer'|trans }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

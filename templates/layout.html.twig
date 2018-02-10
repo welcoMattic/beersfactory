@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}🍻  Beers Factory{% endblock %}</title>
+    <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="{{ path('home') }}" class="navbar-brand d-flex align-items-center">
+                <strong>{{ block('title') }}</strong>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">⬆️  {{ 'global.back_to_top_button'|trans }}</a>
+        </p>
+    </div>
+</footer>

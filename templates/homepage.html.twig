@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Beers Factory</h1>
+        </div>
+    </section>
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2>{{ 'homepage.title'|trans }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for row in beers|batch(3) %}
+                <div class="card-deck">
+                    {% for beer in row %}
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top img-fluid p-4" src="{{ beer.labelThumbnail }}" alt="{{ beer.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ beer.name }}</h5>
+                                {% if beer.ibu > 0 %}
+                                    <div class="progress-group mb-4">
+                                        <span class="progress-text">
+                                            <abbr title="{{ 'beer.ibu_abbreviation'|trans }}">
+                                                IBU
+                                            </abbr>
+                                        </span>
+                                        <span class="progress-number"><b>{{ beer.ibu }}</b>/120</span>
+
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-aqua" style="width: {{ (100 * beer.ibu / 120) }}%"></div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-secondary">{{ beer.category }}</span>
+                                    <a href="{{ path('beer', {id: beer.id}) }}" class="btn btn-sm btn-outline-primary">More 🍺</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

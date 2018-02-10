@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AppGiveMeBeersCommand extends Command implements ContainerAwareInterface
 {
-    const BEER_IDS = ['StkEiv', 'ODQYnq', 'cBqXwG', 'McPfJV', 'T7mZys'];
+    const BEER_IDS = ['StkEiv', 'ODQYnq', 'cBqXwG', 'McPfJV', 'T7mZys', 'LTLdF5', 'HedHnf', '387dtA', 'eGtqKZ'];
     const API_HOST = 'http://api.brewerydb.com/v2';
 
     protected $container;
