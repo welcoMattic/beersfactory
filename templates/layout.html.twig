@@ -8,25 +8,26 @@
 </head>
 
 <body>
-<header>
-    <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-            <a href="{{ path('home') }}" class="navbar-brand d-flex align-items-center">
-                <strong>{{ block('title') }}</strong>
-            </a>
+    <header>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="{{ path('home') }}" class="navbar-brand d-flex align-items-center">
+                    <strong>{{ block('title') }}</strong>
+                </a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<main role="main">
-    {% block content %}
-    {% endblock %}
-</main>
+    <main role="main">
+        {% block content %}
+        {% endblock %}
+    </main>
 
-<footer class="text-muted">
-    <div class="container">
-        <p class="float-right">
-            <a href="#">⬆️  {{ 'global.back_to_top_button'|trans }}</a>
-        </p>
-    </div>
-</footer>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">⬆️  {{ 'global.back_to_top_button'|trans }}</a>
+            </p>
+        </div>
+    </footer>
+</body>
