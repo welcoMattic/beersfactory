@@ -3,14 +3,14 @@
 {% block content %}
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">Beers Factory</h1>
+            <h1 class="jumbotron-heading">{{ 'homepage.heading1'|trans }}</h1>
         </div>
     </section>
 
     <div class="container py-4">
         <div class="row mb-4">
             <div class="col-12">
-                <h2>{{ 'homepage.title'|trans }}</h2>
+                <h2>{{ 'homepage.heading2'|transchoice(beers|length) }}</h2>
             </div>
         </div>
         <div class="row">
@@ -37,7 +37,9 @@
                                 {% endif %}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="badge badge-secondary">{{ beer.category }}</span>
-                                    <a href="{{ path('beer', {id: beer.id}) }}" class="btn btn-sm btn-outline-primary">More 🍺</a>
+                                    <a href="{{ path('beer', {id: beer.id}) }}" class="btn btn-sm btn-outline-primary">
+                                        {{ 'beer.more_button'|trans }}
+                                    </a>
                                 </div>
                             </div>
                         </div>

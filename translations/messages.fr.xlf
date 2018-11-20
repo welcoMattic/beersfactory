@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+  <file id="messages.en">
+    <unit id="39i2J0P" name="homepage.heading1">
+      <segment>
+        <source>homepage.heading1</source>
+        <target>Usine à bières</target>
+      </segment>
+    </unit>
+    <unit id="y7E3OFE" name="homepage.heading2">
+      <segment>
+        <source>homepage.heading2</source>
+        <target>%count% bières dans la collection</target>
+      </segment>
+    </unit>
+    <unit id="N9mx0P8" name="beer.ibu_abbreviation">
+      <segment>
+        <source>beer.ibu_abbreviation</source>
+        <target>International Bitterness Unit</target>
+      </segment>
+    </unit>
+    <unit id="v54rpq2" name="beer.more_button">
+      <segment>
+        <source>beer.more_button</source>
+        <target>Lire la suite 🍺</target>
+      </segment>
+    </unit>
+    <unit id="2z.jRCG" name="global.back_to_top_button">
+      <segment>
+        <source>global.back_to_top_button</source>
+        <target>Remonter en haut</target>
+      </segment>
+    </unit>
+    <unit id="W7LCjuP" name="global.back_to_list_button">
+      <segment>
+        <source>global.back_to_list_button</source>
+        <target>Retourner sur la liste</target>
+      </segment>
+    </unit>
+    <unit id="6eO.mOl" name="beer.abv_abbreviation">
+      <segment>
+        <source>beer.abv_abbreviation</source>
+        <target>Alcohol by volume</target>
+      </segment>
+    </unit>
+    <unit id="gYeBaZW" name="beer.organic_beer">
+      <segment>
+        <source>beer.organic_beer</source>
+        <target>Bière biologique</target>
+      </segment>
+    </unit>
+    <unit id="thfSbOW" name="beer.classic_beer">
+      <segment>
+        <source>beer.classic_beer</source>
+        <target>Bière classique</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

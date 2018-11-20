@@ -148,14 +148,14 @@ class Beer
     {
         $beer = new self();
 
-        $beer->setDescription($payload['description']);
+        $beer->setDescription($payload['description'] ?? '');
         if (array_key_exists('ibu', $payload)) {
             $beer->setIbu($payload['ibu']);
         } else {
             $beer->setIbu(0);
         }
         $beer->setAbv($payload['abv']);
-        $beer->setIsOrganic((bool) $payload['isOrganic']);
+        $beer->setIsOrganic($payload['isOrganic'] !== 'N');
         $beer->setName($payload['name']);
         $beer->setLabelThumbnail($payload['labels']['large']);
 

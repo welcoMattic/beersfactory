@@ -3,7 +3,6 @@ cs:
 
 db:
 	php ./bin/console doctrine:database:create --if-not-exists
-	php ./bin/console doctrine:migrations:migrate -n
 
 install:
 	composer install

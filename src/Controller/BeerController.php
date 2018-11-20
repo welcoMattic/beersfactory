@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Beer;
 use App\Repository\BeerRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class BeerController extends Controller
+class BeerController extends AbstractController
 {
     protected $beerRepository;
 
@@ -18,7 +18,7 @@ class BeerController extends Controller
     }
 
     /**
-     * @Route("/beer/{id}", name="beer")
+     * @Route({"en": "/beer/{id}", "fr": "/biere/{id}"}, name="beer")
      */
     public function index(Beer $beer): Response
     {

@@ -15,8 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AppGiveMeBeersCommand extends Command implements ContainerAwareInterface
 {
-    const BEER_IDS = ['StkEiv', 'ODQYnq', 'cBqXwG', 'McPfJV', 'T7mZys', 'LTLdF5', 'HedHnf', '387dtA', 'eGtqKZ'];
-    const API_HOST = 'http://api.brewerydb.com/v2';
+    const BEER_IDS = ['StkEiv', '65zNUD', 'DGhJbX', 'LDb6oj', '8pAabO', '3XBmmp', 'qQTYZ8', 'Pwu2fR', 'AC98pm', 'htbWwF'];
+    const API_HOST = 'https://sandbox-api.brewerydb.com/v2/';
 
     protected $container;
 
@@ -32,8 +32,9 @@ class AppGiveMeBeersCommand extends Command implements ContainerAwareInterface
         $io = new SymfonyStyle($input, $output);
         $em = $this->container->get('doctrine')->getManager();
 
-        $token = $io->ask('Give me your brewerydb api token right now:', '74c2b5a070ba73e671b3c781939c488e');
-        $result = file_get_contents(sprintf('%s/beers?key=%s&ids=%s', self::API_HOST, $token, implode(',', self::BEER_IDS)));
+        $token = $io->ask('Give me your brewerydb api token right now:', 'c99b71dde14ba7bc099bdc01a65a14d9');
+        $url = sprintf('%s/beers?key=%s&ids=%s', self::API_HOST, $token, implode(',', self::BEER_IDS));
+        $result = file_get_contents($url);
 
         $payload = json_decode($result, true);
 
