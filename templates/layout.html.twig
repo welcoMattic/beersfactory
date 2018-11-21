@@ -15,7 +15,10 @@
                     <strong>{{ block('title') }}</strong>
                 </a>
                 <div class="align-items-end">
-                    <a href="{{ path('locale_switcher', { 'locale': 'fr' }) }}">FR</a> / <a href="{{ path('locale_switcher', { 'locale': 'en' }) }}">EN</a>
+                    <a href="{{ path('locale_switcher', { 'locale': 'fr' }) }}"
+                       class="btn btn-outline-light {{ app.request.locale == 'fr' ? 'active' }}">FR</a>
+                    <a href="{{ path('locale_switcher', { 'locale': 'en' }) }}"
+                       class="btn btn-outline-light {{ app.request.locale == 'en' ? 'active' }}">EN</a>
                 </div>
             </div>
         </div>
